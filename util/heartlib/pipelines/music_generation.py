@@ -166,6 +166,8 @@ class HeartMuLaGenPipeline:
             torch.cuda.synchronize()
         elif self.device.type == "mps":
             torch.mps.synchronize()
+        elif self.device.type == "xpu":
+            torch.xpu.synchronize()
 
     def postprocess(self, frames: torch.Tensor, save_path: str, keep_model_loaded: bool, offload_mode: str = "auto"):
         if offload_mode == "aggressive":
