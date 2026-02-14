@@ -59,11 +59,15 @@ def _get_device():
         return torch.device("cuda")
     elif torch.backends.mps.is_available():
         return torch.device("mps")
+    elif torch.xpu.is_available():
+        return torch.device("xpu")
     return torch.device("cpu")
 
 def _get_dtype(device: torch.device):
     if device.type == "mps":
         return torch.float32  
+    elif device.type == "xpu":
+        return torch.float32
     return torch.bfloat16
 
 class HeartMuLaModelManager:
