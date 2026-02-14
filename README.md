@@ -35,6 +35,9 @@ We are not providing service here, we are group of hobbiests, developers who wan
 **Update:**
 
 ------------------------------------------------------------
+2026-02-14 :
+Added xpu support
+
 2026-01-23 :
 Support new model from HeartMuLa
 
